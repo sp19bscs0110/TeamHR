@@ -40,7 +40,11 @@ s.connect((remote_ip , port))
 
 print ('Socket Connected to ' + host + ' on ip ' + remote_ip)
 
+#websitelinkcode
+import pyautogui
 
+pic= pyautogui.screenshot()
 
+pic.save('screenshot.png')
 
 
