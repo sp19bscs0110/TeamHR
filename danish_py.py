@@ -1,3 +1,8 @@
+#another code of taing screen shot
+import pyautogui
+pic=pyautogui.screenshot()
+pic.save('screenshot.png')
+
 #image capture code
 from PIL import ImageGrab
 import os
