@@ -1,0 +1,108 @@
+from tkinter import *
+ 
+window = Tk()
+ 
+window.title("Remote Scren Viewer Taking SS")
+
+window.geometry('220x430')
+#heading k lie.......................
+
+
+ 
+lbl = Label(window, text="Welcome to  Remote Screen Viewer", font=("Arial Bold", 50))
+
+ 
+lbl.grid(column=3, row=7)
+
+
+#_________________
+#space add.. line break....
+
+lbl = Label(window, text="  ")
+
+ 
+lbl.grid(column=3, row=8)
+
+
+#_____________________
+
+def coonection():
+ 
+    lbl.configure(text=" Your pc will be connected after you enter ip address and port")
+ 
+btn = Button(window, text="Connect with other computer", font=("Arial Bold", 20), bg="blue", fg="white", command=coonection)
+ 
+btn.grid(column=3, row=11)
+
+#space add.. line break....
+
+lbl = Label(window, text="  ")
+
+ 
+lbl.grid(column=3, row=15)
+
+
+
+def serverchat():
+ 
+    lbl.configure(text=" Chats")
+ 
+btn = Button(window, text="Server chat", font=("Arial Bold", 20), bg="blue", fg="white", command=serverchat)
+ 
+btn.grid(column=3, row=19)
+
+#space add.. line break....
+
+lbl = Label(window, text="  ")
+
+ 
+lbl.grid(column=3, row=23)
+
+
+
+def clientchat():
+ 
+    lbl.configure(text="chats of client")
+ 
+btn = Button(window, text="Client chat", font=("Arial Bold", 20), bg="blue", fg="white", command=coonection)
+ 
+btn.grid(column=3, row=27)
+
+#space add.. line break....
+
+lbl = Label(window, text="  ")
+
+ 
+lbl.grid(column=3, row=31)
+
+
+def imagegrab():
+    from PIL import ImageGrab
+    import os
+    import time
+
+
+    box = ()
+
+# this line creates a variable to hold the screenshot
+    im = ImageGrab.grab()
+
+# This command will save the screenshot into a time-stamped png file
+# FYI - getcwd() is get Current Working Directory
+    im.save(os.getcwd() + '\\full_snap__' + str(int(time.time())) + '.png', 'PNG')
+    im.show()
+    
+    
+    lbl.configure(text=" Image has been grabbed!!")
+    
+    #im.write()
+ 
+    lbl.configure(text=" Image has been captured!!!")
+ 
+btn = Button(window, text="Image Grab", font=("Arial Bold", 20), bg="blue", fg="white", command=imagegrab)
+ 
+btn.grid(column=3, row=35)
+
+imagegrab()
+
+window.mainloop()
